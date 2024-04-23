@@ -17,7 +17,6 @@ public class MobileControler : MonoBehaviour
 
     Animator anim;
     [Header("Input")]
-    [SerializeField] KeyCode OpenBook = KeyCode.E;
     public Interactable interactable;
 
     [Header("UserInterface")]
@@ -70,7 +69,7 @@ public class MobileControler : MonoBehaviour
 
     public void Jump(){
         if (canMove){
-            if(IsGrounded){
+            if(IsGrounded ()){
                 rb.velocity = Vector2.up * jf;
                 FindFirstObjectByType<AudioManager>().Play("Jump");
             }
