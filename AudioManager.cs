@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
-            s.source.outputAudioMixerGroup = s.output;
+            s.source.outputAudioMixer = s.output;
             s.source.loop = s.loop;
         }   
     }
