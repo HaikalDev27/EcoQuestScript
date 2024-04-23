@@ -8,15 +8,15 @@ public class SettingMenu : MonoBehaviour
     public AudioMixer audioMixer;
 
     public void SetMasterVolume (float volume){
-        audioMixer.setFloat("masterVolume", volume);
+        audioMixer.SetFloat("masterVolume", volume);
     }
 
     public void SetSfxVolume (float volume){
-        audioMixer.setFloat("sfxVolume", volume);
+        audioMixer.SetFloat("sfxVolume", volume);
     }
 
     public void SetMusicVolume (float volume){
-        audioMixer.setFloat("musicVolume", volume);
+        audioMixer.SetFloat("musicVolume", volume);
     }
 
     public void SetQuality (int qualityIndex){
