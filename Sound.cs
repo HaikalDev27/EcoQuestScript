@@ -12,7 +12,7 @@ public class Sound
     [Range(.1f, 3f)]
     public float pitch;
 
-    public AudioMixer output;
+    public AudioMixerGroup output;
 
     public bool loop;
 
