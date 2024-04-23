@@ -8,6 +8,5 @@ public class DialougueTrigger : MonoBehaviour
 
     public void TriggerDialogue(){
         FindFirstObjectByType<DialougeManager>().StartDialogue(dialogue);
-        FindFirstObjectByType<AudioManager>().Play("DialogueSfx");
     }
 }

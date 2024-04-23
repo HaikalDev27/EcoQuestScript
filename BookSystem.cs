@@ -12,7 +12,10 @@ public class BookSystem : MonoBehaviour
     private string savePath;
     public UnityEvent FirstPlay;
     public UnityEvent notFirstPlay;
+    [Header("Ending1")]
     public float discoveryThreshold;
+    [Header("Ending2")]
+    public float discoveryThreshold2;
 
     void Start()
     {
@@ -50,7 +53,7 @@ public class BookSystem : MonoBehaviour
         SaveDiscoverStatus();
     }
 
-    void SaveDiscoverStatus()
+    public void SaveDiscoverStatus()
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(savePath);
@@ -58,7 +61,7 @@ public class BookSystem : MonoBehaviour
         file.Close();
     }
 
-    void LoadDiscoverStatus()
+    public void LoadDiscoverStatus()
     {
         if (File.Exists(savePath))
         {
@@ -85,7 +88,12 @@ public class BookSystem : MonoBehaviour
         if (percentageDiscovered >= discoveryThreshold)
         {
             // Jika jumlah makhluk yang telah ditemukan mencapai threshold, alihkan ke scene ending
-            SceneManager.LoadScene("EndingScene");
+            SceneManager.LoadScene("GoodEnding");
+        }
+        if (percentageDiscovered >= discoveryThreshold2)
+        {
+            // Jika jumlah makhluk yang telah ditemukan mencapai threshold, alihkan ke scene ending
+            SceneManager.LoadScene("BadEnding");
         }
     }
 }

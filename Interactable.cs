@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviour
     {
         if (isRange)
         {
-            if (Input.GetKeyDown(interactKey))
+            if (Input.GetMouseButtonDown(0))
             {
                 Action.Invoke();
                 canMove = false;
