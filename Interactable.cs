@@ -22,7 +22,6 @@ public class Interactable : MonoBehaviour
         if (isRange)
         {
             Action.Invoke();
-            canMove = false;
             FindFirstObjectByType<AudioManager>().Play("Interact");
         }
     }
