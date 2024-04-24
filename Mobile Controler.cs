@@ -30,6 +30,7 @@ public class MobileControler : MonoBehaviour
         rb = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		boxcolider2d = transform.GetComponent<BoxCollider2D> ();
+        FindFirstObjectByType<AudioManager>().Play("MainTheme");
     }
 
     // Update is called once per frame
