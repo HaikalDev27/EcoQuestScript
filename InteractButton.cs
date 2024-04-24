@@ -11,7 +11,7 @@ public class InteractButton : MonoBehaviour
         // Cari skrip yang mengatur interaksi dengan objek jika belum ada
         if (interactableScript == null)
         {
-            interactableScript = FindObjectOfType<Interactable>();
+            interactableScript = FindFirstObjectByType<Interactable>();
         }
     }
 
