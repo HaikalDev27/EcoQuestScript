@@ -39,6 +39,7 @@ public class BookSystem : MonoBehaviour
                 books[i].isDiscover = true;
                 books[i].pages.SetActive(true);
                 SaveDiscoverStatus();
+                FindFirstObjectByType<AudioManager>().Play("Achievement");
             }
         }
     }
