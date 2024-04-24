@@ -11,7 +11,7 @@ public class InteractButton : MonoBehaviour
         // Cari skrip yang mengatur interaksi dengan objek jika belum ada
         if (interactableScript == null)
         {
-            interactableScript = FindObjectOfType<YourInteractableScript>();
+            interactableScript = FindObjectOfType<Interactable>();
         }
     }
 
@@ -24,7 +24,7 @@ public class InteractButton : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Interactable script not found!");
+            Debug.LogWarning("Error woy!! Udah tidur ae sono goblok");
         }
     }
 }
