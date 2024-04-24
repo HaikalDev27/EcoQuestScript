@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class Interactable : MonoBehaviour
 {
     public bool isRange;
-    public bool canMove;
     public KeyCode interactKey;
     public UnityEvent Action;
     public Animator indicator;
@@ -18,19 +17,13 @@ public class Interactable : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void OnInteract()
     {
         if (isRange)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Action.Invoke();
-                canMove = false;
-                FindFirstObjectByType<AudioManager>().Play("Interact");
-            } else
-            {
-                canMove = true;
-            }
+            Action.Invoke();
+            canMove = false;
+            FindFirstObjectByType<AudioManager>().Play("Interact");
         }
     }
 
