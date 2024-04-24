@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Interactable interactableScript; 
+    private void Start()
     {
-        
+        // Cari skrip yang mengatur interaksi dengan objek jika belum ada
+        if (interactableScript == null)
+        {
+            interactableScript = FindObjectOfType<YourInteractableScript>();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    // Fungsi yang dipanggil saat tombol UI di klik
+    public void OnButtonClick()
     {
-        
+        if (interactableScript != null)
+        {
+            interactableScript.OnInteract();
+        }
+        else
+        {
+            Debug.LogWarning("Interactable script not found!");
+        }
     }
 }
+
