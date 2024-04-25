@@ -11,6 +11,11 @@ public class InteractButton : MonoBehaviour
     {
         buttonPressed = true;
         Debug.LogWarning("Error woy!! Udah tidur ae sono goblok");
+        Invoke("stopPressed", 0.1f);
+    }
+
+    void stopPressed(){
+        buttonPressed = false;
     }
 }
 
