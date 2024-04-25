@@ -8,7 +8,7 @@ public class InteractButton : MonoBehaviour
     // Fungsi yang dipanggil saat tombol UI di klik
     public void OnButtonClick()
     {
-        InputManager.Instance.SetButtonDown("Fire1");
+        Input.SetKeyDown(KeyCode.F);
         Debug.LogWarning("Error woy!! Udah tidur ae sono goblok");
     }
 }
