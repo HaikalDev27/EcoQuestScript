@@ -8,8 +8,10 @@ public class WalkAroundBehaviour : MonoBehaviour
     public Transform[] waypoints; // Titik-titik untuk bergerak
     private int currentWaypoint = 0; // Indeks waypoint saat ini
     private SpriteRenderer spriteRenderer;
+    Rigidbody2D rb;
 
     void Start(){
+        rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
