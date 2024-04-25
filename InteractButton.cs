@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class InteractButton : MonoBehaviour
 {
+    public bool buttonPressed = false;
     // Fungsi yang dipanggil saat tombol UI di klik
     public void OnButtonClick()
     {
-        Input.SetKeyDown(KeyCode.F);
+        buttonPressed = true;
         Debug.LogWarning("Error woy!! Udah tidur ae sono goblok");
     }
 }
