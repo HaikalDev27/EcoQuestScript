@@ -21,10 +21,10 @@ public class Interactable : MonoBehaviour
     {
         if (isRange)
         {
-            if(Input.GetKeyDown(interactKey){
+            if(Input.GetKeyDown(interactKey)){
                 Action.Invoke();
                 FindFirstObjectByType<AudioManager>().Play("Interact");
-            })
+            }
         }
     }
 
