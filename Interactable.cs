@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviour
     {
         if (isRange)
         {
-            if(Input.GetKeyDown(KeyCode.F) && Input.GetButtonDown("Fire1");){
+            if(Input.GetKeyDown(KeyCode.F) && Input.GetButtonDown("Fire1")){
                 Action.Invoke();
                 FindFirstObjectByType<AudioManager>().Play("Interact");
             }
