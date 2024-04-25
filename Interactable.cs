@@ -10,6 +10,7 @@ public class Interactable : MonoBehaviour
     public KeyCode interactKey;
     public UnityEvent Action;
     public Animator indicator;
+    public GameObject canInteract;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class Interactable : MonoBehaviour
         {
             Action.Invoke();
             interactB.buttonPressed = false;
+            canInteract.SetBool(false);
             FindFirstObjectByType<AudioManager>().Play("Interact");        
         }
     }

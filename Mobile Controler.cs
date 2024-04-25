@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class MobileControler : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class MobileControler : MonoBehaviour
     Animator anim;
     [Header("Input")]
     public Interactable interactable;
+    public float Discovered;
 
     [Header("UserInterface")]
     [SerializeField] GameObject Book;
@@ -92,6 +94,19 @@ public class MobileControler : MonoBehaviour
             StartCoroutine(OpenedBook());
         }
 
+    }
+
+    public void IncreaseDiscover(){
+        Discovered ++;
+    }
+
+    public void CheckEnding(){
+        if(Discovered > 8){
+            SceneManager.LoadScene("GoodEnding");
+        }
+        if(Discovered < 8){
+            SceneManager.LoadScene("BadEnding");
+        }
     }
 
     IEnumerator OpenedBook(){
