@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
+    public InteractButton interactB;
     public bool isRange;
     public KeyCode interactKey;
     public UnityEvent Action;
@@ -21,7 +22,7 @@ public class Interactable : MonoBehaviour
     {
         if (isRange)
         {
-            if(Input.GetKeyDown(interactKey)){
+            if(isClicked){
                 Action.Invoke();
                 FindFirstObjectByType<AudioManager>().Play("Interact");
             }
