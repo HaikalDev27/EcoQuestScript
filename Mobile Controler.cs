@@ -31,6 +31,9 @@ public class MobileControler : MonoBehaviour
 		anim = GetComponent<Animator> ();
 		boxcolider2d = transform.GetComponent<BoxCollider2D> ();
         FindFirstObjectByType<AudioManager>().Play("MainTheme");
+        FindFirstObjectByType<AudioManager>().Stop("MainMenuTheme");
+        FindFirstObjectByType<AudioManager>().Stop("GoodEndingTheme");
+        FindFirstObjectByType<AudioManager>().Stop("SadEndingTheme");
     }
 
     // Update is called once per frame

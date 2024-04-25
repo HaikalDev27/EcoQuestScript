@@ -73,7 +73,7 @@ public class BookSystem : MonoBehaviour
         }
     }
 
-    void CheckEnding()
+    public void CheckEnding()
     {
         int discoveredCount = 0;
         for (int i = 0; i < books.Length; i++)
@@ -91,7 +91,7 @@ public class BookSystem : MonoBehaviour
             // Jika jumlah makhluk yang telah ditemukan mencapai threshold, alihkan ke scene ending
             SceneManager.LoadScene("GoodEnding");
         }
-        if (percentageDiscovered >= discoveryThreshold2)
+        if (percentageDiscovered <= discoveryThreshold)
         {
             // Jika jumlah makhluk yang telah ditemukan mencapai threshold, alihkan ke scene ending
             SceneManager.LoadScene("BadEnding");

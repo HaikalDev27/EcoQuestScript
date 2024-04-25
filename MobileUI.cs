@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MobileUI : MonoBehaviour
 {
+    public string SongName;
+    public string SongName1;
+
     // Start is called before the first frame update
     void Start()
     {
-        FindFirstObjectByType<AudioManager>().Play("MainTheme");
+        FindFirstObjectByType<AudioManager>().Play(SongName);
+        FindFirstObjectByType<AudioManager>().Stop(SongName1);
+        FindFirstObjectByType<AudioManager>().Stop("GoodEndingTheme");
+        FindFirstObjectByType<AudioManager>().Stop("SadEndingTheme");
     }
 
     // Update is called once per frame
@@ -17,8 +23,16 @@ public class MobileUI : MonoBehaviour
         
     }
 
+    public void StartGame(){
+        SceneManager.LoadScene("MainGame");
+    }
+
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGame(){
+        Application.Quit();
     }
 }
