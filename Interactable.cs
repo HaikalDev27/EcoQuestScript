@@ -21,8 +21,10 @@ public class Interactable : MonoBehaviour
     {
         if (isRange)
         {
-            Action.Invoke();
-            FindFirstObjectByType<AudioManager>().Play("Interact");
+            if(Input.GetKeyDown(interactKey){
+                Action.Invoke();
+                FindFirstObjectByType<AudioManager>().Play("Interact");
+            })
         }
     }
 
