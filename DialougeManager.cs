@@ -40,7 +40,6 @@ public class DialougeManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        FindFirstObjectByType<AudioManager>().Play("DialogueSfx");
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
