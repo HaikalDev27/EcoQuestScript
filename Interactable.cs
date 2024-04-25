@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void OnInteract()
+    void Update()
     {
         if (isRange)
         {
