@@ -25,7 +25,7 @@ public class Interactable : MonoBehaviour
         {
             Action.Invoke();
             interactB.buttonPressed = false;
-            canInteract.SetBool(false);
+            canInteract.SetActive(false);
             FindFirstObjectByType<AudioManager>().Play("Interact");        
         }
     }
