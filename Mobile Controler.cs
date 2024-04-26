@@ -24,7 +24,6 @@ public class MobileControler : MonoBehaviour
     public UnityEvent Action;
 
     [Header("UserInterface")]
-    [SerializeField] GameObject Book;
     public Animator bookAnimator;
     [SerializeField] float BookExitTime;
     [SerializeField] GameObject PauseMenu;
@@ -115,14 +114,12 @@ public class MobileControler : MonoBehaviour
     IEnumerator OpenedBook(){
         anim.SetBool("isBook", true);
         yield return new WaitForSeconds(BookExitTime);
-        Book.SetActive(true);
         bookAnimator.SetBool("isBookOpen", true);
     }
 
     IEnumerator ClosedBook(){
         bookAnimator.SetBool("isBookOpen", false);
         yield return new WaitForSeconds(BookExitTime);
-        Book.SetActive(false);
         anim.SetBool("isBook", false);
     }
 

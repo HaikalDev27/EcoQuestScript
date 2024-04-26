@@ -26,10 +26,10 @@ public class WalkAroundBehaviour : MonoBehaviour
             currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
         }
 
-        if(rb.velocity.x < -1){
+        if(rb.velocity.x > -1){
             spriteRenderer.flipX = true;
         } 
-        if(rb.velocity.x > 1)  {
+        if(rb.velocity.x < 1)  {
             spriteRenderer.flipX = false;
         }
     }
