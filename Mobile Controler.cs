@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement; 
 
 public class MobileControler : MonoBehaviour
@@ -20,6 +21,7 @@ public class MobileControler : MonoBehaviour
     [Header("Input")]
     public Interactable interactable;
     public float Discovered;
+    public UnityEvent Action;
 
     [Header("UserInterface")]
     [SerializeField] GameObject Book;
@@ -36,6 +38,7 @@ public class MobileControler : MonoBehaviour
         FindFirstObjectByType<AudioManager>().Stop("MainMenuTheme");
         FindFirstObjectByType<AudioManager>().Stop("GoodEndingTheme");
         FindFirstObjectByType<AudioManager>().Stop("SadEndingTheme");
+        Action.Invoke();
     }
 
     // Update is called once per frame
