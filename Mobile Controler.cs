@@ -104,7 +104,7 @@ public class MobileControler : MonoBehaviour
     }
 
     public void CheckEnding(){
-        if(Discovered > 8){
+        if(Discovered > 7){
             SceneManager.LoadScene("GoodEnding");
         }
         if(Discovered < 8){
