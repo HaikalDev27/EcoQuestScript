@@ -37,6 +37,15 @@ public class HidingBehaviour : MonoBehaviour
         {
             animator.SetBool("IsGossiping", false);
         }
+        
+        Invoke("StopGossiping", gossipTimer);
+        Invoke("StartGossiping", gossipTimer);
+    }
+
+    void StopGossiping()
+    {
+        Debug.Log("Keluar dari pohon...");
+        isGossiping = false;
     }
 
     // Fungsi untuk memulai mengumpat
