@@ -19,6 +19,7 @@ public class MobileControler : MonoBehaviour
 
     Animator anim;
     [Header("Input")]
+    [SerializeField] GameObject Book;
     public Interactable interactable;
     public float Discovered;
     public UnityEvent Action;
@@ -113,6 +114,7 @@ public class MobileControler : MonoBehaviour
 
     IEnumerator OpenedBook(){
         anim.SetBool("isBook", true);
+        Book.SetActive(true);
         yield return new WaitForSeconds(BookExitTime);
         bookAnimator.SetBool("isBookOpen", true);
     }
@@ -120,6 +122,7 @@ public class MobileControler : MonoBehaviour
     IEnumerator ClosedBook(){
         bookAnimator.SetBool("isBookOpen", false);
         yield return new WaitForSeconds(BookExitTime);
+        Book.SetActive(false);
         anim.SetBool("isBook", false);
     }
 
