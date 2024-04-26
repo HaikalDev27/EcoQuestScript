@@ -97,4 +97,12 @@ public class BookSystem : MonoBehaviour
             SceneManager.LoadScene("BadEnding");
         }
     }
+
+    public void GoodEnd(){
+        SceneManager.LoadScene("GoodEnding");
+    }
+
+    public void BadEnd(){
+        SceneManager.LoadScene("BadEnding");
+    }
 }
