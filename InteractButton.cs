@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InteractButton : MonoBehaviour
 {
     public bool buttonPressed = false;
-    // Fungsi yang dipanggil saat tombol UI di klik
+    // Function that's called when the UI is clicked
     public void OnButtonClick()
     {
         buttonPressed = true;
