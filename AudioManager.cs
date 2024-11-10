@@ -11,19 +11,19 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake() {
 
-        if (instance == null)
-            instance = this;
+        if (instance == null) //if an object with this component script
+            instance = this; //then leave it like so
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); //but if it's not then destroy this object
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject); //because this will be exist in main scene but not in any other so we wont destroy this object on main scene while we'll create a new one in other scene
         
-        foreach (Sound s in sounds)
+        foreach (Sound s in sounds) //Volume mixer in setting UI
         {
-            s.source = gameObject.AddComponent<AudioSource>();
+            s.source = gameObject.AddComponent<AudioSource>(); //get the source of our audio
             s.source.clip = s.clip;
 
             s.source.volume = s.volume;
@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
         {
             return;
         }
-        s.source.Play();
+        s.source.Play(); //play the sound on source
     }
 
     public void Stop(string name){
@@ -49,6 +49,6 @@ public class AudioManager : MonoBehaviour
         {
             return;
         }
-        s.source.Stop();
+        s.source.Stop(); //stopping the sound
     }
 }
